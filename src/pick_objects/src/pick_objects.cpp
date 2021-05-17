@@ -34,16 +34,13 @@ int main(int argc, char** argv) {
 
   ros::Duration(5.0).sleep();
 
-  move_base_msgs::MoveBaseGoal goal2;
-
-  goal2.target_pose.header.frame_id = "map";
-  goal2.target_pose.header.stamp = ros::Time::now();
-
-  goal2.target_pose.pose.position.x = 0.1;
-  goal2.target_pose.pose.orientation.w = 1.0;
+  goal.target_pose.pose.position.x = 0.1;
+  goal.target_pose.pose.orientation.w = 1.0;
 
   ROS_INFO("Sending goal: go to the drop-off zone");
-  ac.sendGoal(goal2);
+  ac.sendGoal(goal);
+
+  ac.waitForResult();
 
   if (ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED) {
     ROS_INFO("The robot drop off the ball");
