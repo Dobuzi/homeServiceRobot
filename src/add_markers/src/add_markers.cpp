@@ -28,8 +28,8 @@ int main( int argc, char** argv )
   // 2 : drive to drop off zone
   // 3 : drop off the object
 
-  double pick_up_zone[2] = {1, 1};
-  double drop_off_zone[2] = {2, 2};  
+  double pick_up_zone[2] = {3, 0};
+  double drop_off_zone[2] = {-3, -0.5};  
   double threshold = 0.3;
   double distance = 99999;
   int wait = 0;
