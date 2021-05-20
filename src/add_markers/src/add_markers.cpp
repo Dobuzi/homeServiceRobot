@@ -1,7 +1,9 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
+#include <nav_msgs/Odometry.h>
 
 visualization_msgs::Marker setMarker(visualization_msgs::Marker marker, int position[3], double orientation[4], double scale[3], float color[3], double alpha);
+void chatterCallback(const nav_msgs::Odometry::ConstPtr& msg);
 
 int main( int argc, char** argv )
 {
@@ -9,6 +11,8 @@ int main( int argc, char** argv )
   ros::NodeHandle n;
   ros::Rate r(1);
   ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
+  // Subscribe odom
+  ros::Subscriber odom_sub = n.subscribe("odom", 1000, chatterCallback);
 
   // Set our initial shape type to be a cube
   uint32_t shape = visualization_msgs::Marker::CUBE;
@@ -52,6 +56,7 @@ int main( int argc, char** argv )
         ROS_INFO("Hide the marker after pickup");
         break;
       case 2:
+        sleep(5);
         position[0] = 2;
         position[1] = 2;
         marker.action = visualization_msgs::Marker::ADD;
@@ -85,6 +90,8 @@ int main( int argc, char** argv )
 
     r.sleep();
   }
+  
+  ros::spin();
   return 0;
 }
 
@@ -108,4 +115,12 @@ visualization_msgs::Marker setMarker(visualization_msgs::Marker marker, int posi
   marker.color.a = alpha;
 
   return marker;
+}
+
+void chatterCallback(const nav_msgs::Odometry::ConstPtr& msg)
+{
+  ROS_INFO("Seq: [%d]", msg->header.seq);
+  ROS_INFO("Position-> x: [%f], y: [%f], z: [%f]", msg->pose.pose.position.x,msg->pose.pose.position.y, msg->pose.pose.position.z);
+  ROS_INFO("Orientation-> x: [%f], y: [%f], z: [%f], w: [%f]", msg->pose.pose.orientation.x, msg->pose.pose.orientation.y, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w);
+  ROS_INFO("Vel-> Linear: [%f], Angular: [%f]", msg->twist.twist.linear.x,msg->twist.twist.angular.z);
 }
