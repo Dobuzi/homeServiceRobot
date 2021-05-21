@@ -1,3 +1,4 @@
 build/
 devel/
 src/map/*.db
+src/scripts/setup_for_JW.sh
