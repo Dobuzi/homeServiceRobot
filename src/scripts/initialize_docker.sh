@@ -14,10 +14,11 @@ git clone https://github.com/ros-perception/slam_gmapping.git
 git clone https://github.com/turtlebot/turtlebot.git  
 git clone https://github.com/turtlebot/turtlebot_interactions.git  
 git clone https://github.com/turtlebot/turtlebot_simulator.git
+cd ../
+source devel/setup.bash
 rosdep -i install gmapping -y
 rosdep -i install turtlebot_teleop -y
 rosdep -i install turtlebot_rviz_launchers -y
 rosdep -i install turtlebot_gazebo -y
-cd ../
 catkin_make
 source devel/setup.bash
