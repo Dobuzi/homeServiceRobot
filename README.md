@@ -5,10 +5,21 @@ SLAM and Path Planning for home service robot with ros
 ![Home Service Robot](homeService.gif)
 
 # How to use
+1. On ubuntu (VM or Raw)
 ```
 git clone https://github.com/Dobuzi/homeServiceRobot.git
 cd homeServiceRobot
 chmod +x src/scripts/initialize.sh
+./src/scripts/initialize.sh
+chmod +x src/scripts/home_service.sh
+./src/scripts/home_service.sh
+```
+
+2. On docker ros:kinetic (docker run -it ros:kinetic)
+```
+git clone https://github.com/Dobuzi/homeServiceRobot.git
+cd homeServiceRobot
+chmod +x src/scripts/initialize_docker.sh
 ./src/scripts/initialize.sh
 chmod +x src/scripts/home_service.sh
 ./src/scripts/home_service.sh

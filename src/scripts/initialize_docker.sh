@@ -1,11 +1,11 @@
 #!/bin/sh
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt-get update && apt-get upgrade
-sudo apt-get install xterm
-sudo pip install --upgrade pip
-sudo pip3 install --upgrade pip
-sudo pip install rospkg
-sudo pip3 install rospkg
+apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+apt-get update && apt-get upgrade
+apt-get install xterm python3-pip
+pip install --upgrade pip
+pip3 install --upgrade pip
+pip install rospkg
+pip3 install rospkg
 catkin_make
 source devel/setup.bash
 cd src/
