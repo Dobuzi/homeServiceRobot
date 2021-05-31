@@ -13,9 +13,7 @@ SLAM and Path Planning for home service robot with ros
 ```
 git clone https://github.com/Dobuzi/homeServiceRobot.git
 cd homeServiceRobot
-chmod +x src/scripts/initialize.sh
 ./src/scripts/initialize.sh
-chmod +x src/scripts/home_service.sh
 ./src/scripts/home_service.sh
 ```
 
@@ -24,9 +22,7 @@ chmod +x src/scripts/home_service.sh
 ```
 git clone https://github.com/Dobuzi/homeServiceRobot.git
 cd homeServiceRobot
-chmod +x src/scripts/initialize_docker.sh
 ./src/scripts/initialize_docker.sh
-chmod +x src/scripts/home_service.sh
 ./src/scripts/home_service.sh
 ```
 
