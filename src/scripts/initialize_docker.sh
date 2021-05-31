@@ -15,13 +15,13 @@ cd ../
 . /opt/ros/kinetic/setup.bash
 catkin_make
 chmod +x devel/setup.bash
-. /devel/setup.bash
+. devel/setup.bash
 catkin_make
-. /devel/setup.bash
+. devel/setup.bash
 rosdep -i install gmapping -y
 rosdep -i install turtlebot_teleop -y
 rosdep -i install turtlebot_rviz_launchers -y
 rosdep -i install turtlebot_gazebo -y
-. /devel/setup.bash
+. devel/setup.bash
 catkin_make
-. /devel/setup.bash
+. devel/setup.bash
