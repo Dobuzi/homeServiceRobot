@@ -1,11 +1,11 @@
 #!/bin/sh
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-get update -y && apt-get upgrade -y
-sudo apt-get install xterm python3-pip -y
-sudo pip install --upgrade pip
-sudo pip3 install --upgrade pip
-sudo pip install rospkg
-sudo pip3 install rospkg
+sudo apt-get install xterm python-pip python3-pip -y
+sudo python -m pip install --upgrade pip
+sudo python3 -m pip3 install --upgrade pip
+sudo python -m pip install rospkg
+sudo python3 -m pip3 install rospkg
 source /opt/ros/kinetic/setup.bash
 catkin_make
 source devel/setup.bash
