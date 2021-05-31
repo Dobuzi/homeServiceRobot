@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt-get update && apt-get upgrade
-sudo apt-get install xterm
+sudo apt-get update && apt-get upgrade -y
+sudo apt-get install xterm python3-pip -y
 sudo pip install --upgrade pip
 sudo pip3 install --upgrade pip
 sudo pip install rospkg
