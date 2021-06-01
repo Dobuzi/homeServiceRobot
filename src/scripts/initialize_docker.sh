@@ -1,5 +1,5 @@
 #!/bin/sh
-apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 apt-get update -y && apt-get upgrade -y
 apt-get install xterm python-pip python3-pip -y
 python -m pip install --upgrade pip
